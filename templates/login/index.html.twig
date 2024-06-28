@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LoginController!{% endblock %}
+
+{% block body %}
+<h1>Se connecter</h1>
+{% for message in app.flashes('success')%}
+<div>
+    {{message}}
+</div>
+{% endfor %}
+{% if error %}
+    <div class="alert alert-dismissible alert-danger">
+        champ invalide
+    </div>
+{% endif %}
+
+<form action="{{path('app_login')}}" method = "post">
+<div>
+    <label for "username" class="form-label">E-mail :<label>
+    <input type="text" class="form-control" id="username" name="_username" value="{{last_username}}">
+</div>
+<div>
+    <label for "password" class="form-label">Mot de passe :<label>
+    <input type="text" class="form-control" id="password" name="_password">
+</div>
+<div class="btn">
+    <button type="submit" class="btn btn-success mt-3">Se connecter</button>
+</div>
+</form>
+{% endblock %}
