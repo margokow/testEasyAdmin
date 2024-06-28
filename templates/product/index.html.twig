@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <h1>Nos smartphones</h1>
+    
+    {% for product in products %}
+        
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{asset ('/images/productImg/' ~ product.image)}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.marque.nom}} {{product.nom}}</h5>
+            <a href="{{path('app_product_show', {'id' : product.id}) }}" class="btn btn-primary">Voir le produit</a>
+        </div>
+    </div>
+    {% endfor %}
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.nom }}</td>
+                <td>{{ product.titre }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.prix }}</td>
+                <td>{{ product.image }}</td>
+                <td>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> #}
+{% endblock %}
