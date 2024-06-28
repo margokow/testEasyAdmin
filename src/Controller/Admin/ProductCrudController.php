@@ -35,6 +35,7 @@ class ProductCrudController extends AbstractCrudController
                 ->setFormTypeOptions($pageName !== Crud::PAGE_EDIT ? ['allow_delete' => false] : []),
             
             AssociationField::new('marque'),
+            AssociationField::new('category')
         ];
     }
 }

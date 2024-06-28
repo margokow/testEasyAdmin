@@ -4,6 +4,7 @@
 
 {% block body %}
     <img src="{{asset ('/images/productImg/' ~ product.image)}}" class="img-thumbnail" alt="...">
+    <h2 class="text-center">{{product.category.nom}}</h2>
     <h1 class="text-center">{{product.nom}}</h1>
     <h2 class="text-center">{{product.titre}}</h2>
     <p class="text-center">{{product.description}}</p>

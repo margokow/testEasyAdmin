@@ -11,6 +11,7 @@
     <div class="card" style="width: 18rem;">
         <img src="{{asset ('/images/productImg/' ~ product.image)}}" class="card-img-top" alt="...">
         <div class="card-body">
+            <h5 class="card-title">{{product.category.nom}}</h5>
             <h5 class="card-title">{{product.marque.nom}} {{product.nom}}</h5>
             <a href="{{path('app_product_show', {'id' : product.id}) }}" class="btn btn-primary">Voir le produit</a>
         </div>

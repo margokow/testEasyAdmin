@@ -32,6 +32,10 @@ class Product
     #[ORM\ManyToOne(inversedBy: 'Product')]
     private ?Marque $marque = null;
 
+    #[ORM\ManyToOne(inversedBy: 'Product')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Category $category = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +109,18 @@ class Product
     public function setMarque(?Marque $marque): static
     {
         $this->marque = $marque;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }
